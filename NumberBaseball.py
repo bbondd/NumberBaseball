@@ -61,8 +61,13 @@ def get_best_combination(search_space_binary):
     for combination in all_combination:
         max_sizes.append(get_max_size_of_part_search_space(search_space_binary, combination))
 
-    best_combination_index = max_sizes.index(min(max_sizes))
-    return all_combination[best_combination_index]
+    best_combination_max_size = min(max_sizes)
+    temp_best_combination_index = max_sizes.index(best_combination_max_size)
+    for index in range(len(max_sizes)):
+        if (max_sizes[index] is best_combination_max_size) & search_space_binary[index] is 1:
+            return all_combination[index]
+
+    return all_combination[temp_best_combination_index]
 
 
 def get_answer(initial_combination):
@@ -87,6 +92,7 @@ def get_answer(initial_combination):
 
 
 def main():
+    print('made by 코딩조무사 in 엘리시움')
     while True:
         initial_combination = (1, 2, 3)
         print('initial combination : ', end='')
