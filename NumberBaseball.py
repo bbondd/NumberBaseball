@@ -92,7 +92,7 @@ def get_answer(initial_combination):
 
 
 def main():
-    print('made by 코딩조무사 in 엘리시움')
+    print('made by CodingHelper in Elysium')
     while True:
         initial_combination = (1, 2, 3)
         print('initial combination : ', end='')
@@ -107,6 +107,5 @@ def main():
         one_more_time = input()
         if not one_more_time == 'y':
             return
-
 
 main()
